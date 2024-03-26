@@ -6,6 +6,7 @@ export default {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
+    
 
     fontFamily: {
       'inter': ['Inter', 'sans-serif'],
@@ -26,7 +27,7 @@ export default {
 
 
   plugins: [
-    require('flowbite/plugin'),
+    require("daisyui"),
   ],
 
 }

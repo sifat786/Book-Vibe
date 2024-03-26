@@ -2,6 +2,6 @@
 
 
 
-## [ Private Repo Link](https://classroom.github.com/a/3k0P1rCt)
+## [ Live Website Link](https://book-vibe-69.netlify.app/)
 
-Click here for the private repo: [https://classroom.github.com/a/3k0P1rCt](https://classroom.github.com/a/3k0P1rCt)
+Click here for the live website: [https://book-vibe-69.netlify.app/](https://book-vibe-69.netlify.app/)
