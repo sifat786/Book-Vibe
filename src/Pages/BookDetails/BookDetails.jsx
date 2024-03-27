@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom';
 import useBooksData from '../../Hooks/useBooksData';
 import { useEffect, useState } from 'react';
+import { saveToLocalStorage } from '../../utils/localStorage';
 
 
 const BookDetails = () => {
 
-    const [singleData, setSingleData] = useState({});
+    const [singleData, setSingleData] = useState([]);
     const {bookId} = useParams();
     const {data} = useBooksData();
 
@@ -16,10 +17,14 @@ const BookDetails = () => {
         }
     }, [bookId, data])
 
+    const handleRead = () => {
+        saveToLocalStorage(singleData);
+    }
+
     const {  image, bookName, author, category, rating, review, totalPages, publisher, yearOfPublishing, tags } = singleData || {};
     
     return (
-        <div className='mb-[164px] mt-3'>
+        <div className='mb-[100px] mt-3'>
             <div className="flex  gap-12">
 
                 <div className="w-1/2 bg-neutral-900 bg-opacity-5 rounded-2xl p-[74px] pt-[100px]">
@@ -65,7 +70,7 @@ const BookDetails = () => {
 
                     {/* //! btn */}
                     <div className='gap-4 flex '>
-                        <button className='px-7 py-[18px] rounded-lg border border-neutral-900 border-opacity-30    text-neutral-900 text-lg font-semibold'>Read</button>
+                        <button onClick={handleRead} className='px-7 py-[18px] rounded-lg border border-neutral-900 border-opacity-30    text-neutral-900 text-lg font-semibold'>Read</button>
                         <button className='px-7 py-[18px] rounded-lg bg-[#50B1C9]      text-white text-lg font-semibold'>Wishlist</button>
                     </div>
                 </div>
