@@ -2,7 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Read from '../../components/Read/Read';
 import { FaChevronDown } from "react-icons/fa6";
-import { getFromLocalStorage } from '../../utils/localStorage';
+import { getFromLocalStorage, getFromLocalStorage2 } from '../../utils/localStorage';
 import { useEffect, useState } from 'react';
 import Wishlist from '../../components/Wishlist/Wishlist';
 
@@ -12,29 +12,48 @@ const ListedBooks = () => {
     const [localData, setLocalData] = useState([]);
     const [sort, setSort] = useState([]);
 
+    const [localData2, setLocalData2] = useState([]);
+    const [sort2, setSort2] = useState([]);
+
     useEffect(() => {
         setLocalData(getFromLocalStorage());
         setSort(getFromLocalStorage());
     },[])
 
+    useEffect(() => {
+        setLocalData2(getFromLocalStorage2());
+        setSort2(getFromLocalStorage2());
+    },[])
+
     const handleFilter = filter => {
         if(filter === 'All') {
             setSort(localData);
+            setSort2(localData2);
         } else if(filter === 'Fiction') {
             const filteredData = localData.filter(data => data?.category === 'Fiction');
+            const filteredData2 = localData2.filter(data => data?.category === 'Fiction');
             setSort(filteredData);
+            setSort2(filteredData2);
         } else if(filter === 'Fantasy') {
             const filteredData = localData.filter(data => data?.category === 'Fantasy');
+            const filteredData2 = localData2.filter(data => data?.category === 'Fantasy');
             setSort(filteredData);
+            setSort2(filteredData2);
         }else if(filter === 'Mystery') {
             const filteredData = localData.filter(data => data?.category === 'Mystery');
+            const filteredData2 = localData2.filter(data => data?.category === 'Mystery');
             setSort(filteredData);
+            setSort2(filteredData2);
         }else if(filter === 'Adult') {
             const filteredData = localData.filter(data => data?.category === 'Adult');
+            const filteredData2 = localData2.filter(data => data?.category === 'Adult');
             setSort(filteredData);
+            setSort2(filteredData2);
         }else if(filter === 'Thriller') {
             const filteredData = localData.filter(data => data?.category === 'Thriller');
+            const filteredData2 = localData2.filter(data => data?.category === 'Thriller');
             setSort(filteredData);
+            setSort2(filteredData2);
         }
     }
 
@@ -90,7 +109,7 @@ const ListedBooks = () => {
                 
                     <div className='my-12'>
                         {
-                                sort?.map((wish, idx) => <Wishlist
+                                sort2?.map((wish, idx) => <Wishlist
                                         key={idx}
                                         wish={wish}
                                 ></Wishlist>)
