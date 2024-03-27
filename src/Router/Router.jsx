@@ -4,6 +4,7 @@ import ErrorPage from './../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home';
 import ListedBooks from './../Pages/ListedBooks/ListedBooks';
 import PagesRead from "../Pages/PagesRead/PagesRead";
+import BookDetails from './../Pages/BookDetails/BookDetails';
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         {
           path: '/pages',
           element: <PagesRead/>,
+        },
+        {
+          path: '/book-details/:bookId',
+          element: <BookDetails/>,
+          // loader: 
         },
       ]
     },
