@@ -1,4 +1,4 @@
-
+import { ScrollRestoration } from "react-router-dom";
 import { Outlet } from 'react-router-dom';
 import Navbar from './../components/Navbar/Navbar';
 
@@ -7,6 +7,7 @@ const Root = () => {
         <div className='container'>
             <Navbar/>
             <Outlet/>
+            <ScrollRestoration />
         </div>
     );
 };

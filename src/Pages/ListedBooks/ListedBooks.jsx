@@ -1,13 +1,42 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import useLocalStorage from '../../Hooks/useLocalStorage';
 import Read from '../../components/Read/Read';
-// import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown } from "react-icons/fa6";
+import { getFromLocalStorage } from '../../utils/localStorage';
+import { useEffect, useState } from 'react';
+import Wishlist from '../../components/Wishlist/Wishlist';
 
 
 const ListedBooks = () => {
 
-    const {localData} = useLocalStorage();
+    const [localData, setLocalData] = useState([]);
+    const [sort, setSort] = useState([]);
+
+    useEffect(() => {
+        setLocalData(getFromLocalStorage());
+        setSort(getFromLocalStorage());
+    },[])
+
+    const handleFilter = filter => {
+        if(filter === 'All') {
+            setSort(localData);
+        } else if(filter === 'Fiction') {
+            const filteredData = localData.filter(data => data?.category === 'Fiction');
+            setSort(filteredData);
+        } else if(filter === 'Fantasy') {
+            const filteredData = localData.filter(data => data?.category === 'Fantasy');
+            setSort(filteredData);
+        }else if(filter === 'Mystery') {
+            const filteredData = localData.filter(data => data?.category === 'Mystery');
+            setSort(filteredData);
+        }else if(filter === 'Adult') {
+            const filteredData = localData.filter(data => data?.category === 'Adult');
+            setSort(filteredData);
+        }else if(filter === 'Thriller') {
+            const filteredData = localData.filter(data => data?.category === 'Thriller');
+            setSort(filteredData);
+        }
+    }
 
   return (
     <div>
@@ -19,14 +48,17 @@ const ListedBooks = () => {
         {/* //! dropdown: */}
         <div className='text-right'>
             <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1    bg-green-600 hover:bg-black duration-300 rounded-lg text-center text-white text-lg font-semibold">Sort By</div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-green-100 rounded-box w-[110px]">
-                    <li className='text-lg font-medium'><a>All</a></li>
-                    <li className='text-lg font-medium'><a>Fiction</a></li>
-                    <li className='text-lg font-medium'><a>Fantasy</a></li>
-                    <li className='text-lg font-medium'><a>Mystery</a></li>
-                    <li className='text-lg font-medium'><a>Adult</a></li>
-                    <li className='text-lg font-medium'><a>Thriller</a></li>
+                <div tabIndex={0} role="button" className="btn m-1    bg-green-600 hover:bg-black duration-300 rounded-lg text-center text-white text-lg font-semibold">
+                    <p>Sort By</p>
+                    <FaChevronDown/>
+                </div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-green-100 rounded-box w-[135px]">
+                    <li onClick={() => handleFilter('All')} className='text-lg font-medium'><a>All</a></li>
+                    <li onClick={() => handleFilter('Fiction')} className='text-lg font-medium'><a>Fiction</a></li>
+                    <li onClick={() => handleFilter('Fantasy')} className='text-lg font-medium'><a>Fantasy</a></li>
+                    <li onClick={() => handleFilter('Mystery')} className='text-lg font-medium'><a>Mystery</a></li>
+                    <li onClick={() => handleFilter('Adult')} className='text-lg font-medium'><a>Adult</a></li>
+                    <li onClick={() => handleFilter('Thriller')} className='text-lg font-medium'><a>Thriller</a></li>
                 </ul>
             </div>
         </div>
@@ -42,8 +74,8 @@ const ListedBooks = () => {
             <TabPanel>
                 
                    <div className='my-12'>
-                    {
-                            localData.map((read, idx) => <Read
+                        {
+                            sort?.map((read, idx) => <Read
                                         key={idx}
                                         read={read}
                             ></Read>)
@@ -54,7 +86,17 @@ const ListedBooks = () => {
 
             {/* //! wishlist: */}
             <TabPanel>
-                <h2>Any content 2</h2>
+                
+                
+                    <div className='my-12'>
+                        {
+                                sort?.map((wish, idx) => <Wishlist
+                                        key={idx}
+                                        wish={wish}
+                                ></Wishlist>)
+                        }
+                    </div>
+
             </TabPanel>
         </Tabs>
     </div>

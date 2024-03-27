@@ -40,9 +40,15 @@ const BookDetails = () => {
 
                     <div className='py-[28px] flex gap-3 items-center border-b border-neutral-500 border-opacity-20'>
                         <p className='text-neutral-900 text-base font-bold'>Tags: </p>
-                        <div className='py-[7px] px-4 bg-[#23BE0A] bg-opacity-10 rounded-[30px]'>
-                            <span className='text-[#23BE0A] text-base font-medium'>{tags}</span>
-                        </div>
+                        {
+                            tags?.map((tag, idx) => {
+                                return (
+                                    <div key={idx} className='py-[7px] px-4 bg-[#23BE0A] bg-opacity-10 rounded-[30px]'>
+                                        <span className='text-[#23BE0A] text-base font-medium'>{tag}</span>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
 
                     <div className='py-12 space-y-3'>
