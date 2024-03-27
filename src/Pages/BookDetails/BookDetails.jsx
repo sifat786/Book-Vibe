@@ -39,7 +39,7 @@ const BookDetails = () => {
                     <p className='py-6 w-[549px] text-neutral-900 text-base font-bold'>Review : <span className='text-neutral-600 text-opacity-70 font-inter text-base leading-relaxed'>{review}</span></p>
 
                     <div className='py-[28px] flex gap-3 items-center border-b border-neutral-500 border-opacity-20'>
-                        <p className='text-neutral-900 text-base font-bold'>Tag : </p>
+                        <p className='text-neutral-900 text-base font-bold'>Tags: </p>
                         <div className='py-[7px] px-4 bg-[#23BE0A] bg-opacity-10 rounded-[30px]'>
                             <span className='text-[#23BE0A] text-base font-medium'>{tags}</span>
                         </div>

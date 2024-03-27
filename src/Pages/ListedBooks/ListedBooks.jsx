@@ -1,8 +1,14 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import useLocalStorage from '../../Hooks/useLocalStorage';
+import Read from '../../components/Read/Read';
+// import { FaChevronDown } from "react-icons/fa6";
 
 
 const ListedBooks = () => {
+
+    const {localData} = useLocalStorage();
+
   return (
     <div>
 
@@ -12,17 +18,17 @@ const ListedBooks = () => {
 
         {/* //! dropdown: */}
         <div className='text-right'>
-            <details className="dropdown">
-                <summary className="m-1 px-5 py-3.5 bg-green-600 rounded-lg   text-center text-white text-lg font-semibold">Sort By</summary>
-                <ul className="p-2 shadow-lg menu dropdown-content z-[-1]  rounded-box w-[132px]">
-                    <li className='text-lg font-semibold'><a>All</a></li>
-                    <li className='text-lg font-semibold'><a>Fiction</a></li>
-                    <li className='text-lg font-semibold'><a>Fantasy</a></li>
-                    <li className='text-lg font-semibold'><a>Mystery</a></li>
-                    <li className='text-lg font-semibold'><a>Adult</a></li>
-                    <li className='text-lg font-semibold'><a>Thriller</a></li>
+            <div className="dropdown">
+                <div tabIndex={0} role="button" className="btn m-1    bg-green-600 hover:bg-black duration-300 rounded-lg text-center text-white text-lg font-semibold">Sort By</div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-green-100 rounded-box w-[110px]">
+                    <li className='text-lg font-medium'><a>All</a></li>
+                    <li className='text-lg font-medium'><a>Fiction</a></li>
+                    <li className='text-lg font-medium'><a>Fantasy</a></li>
+                    <li className='text-lg font-medium'><a>Mystery</a></li>
+                    <li className='text-lg font-medium'><a>Adult</a></li>
+                    <li className='text-lg font-medium'><a>Thriller</a></li>
                 </ul>
-            </details>
+            </div>
         </div>
 
         {/* //! react-tab: */}
@@ -34,7 +40,16 @@ const ListedBooks = () => {
 
             {/* //! read books: */}
             <TabPanel>
-                <h2>Any content 1</h2>
+                
+                   <div className='my-12'>
+                    {
+                            localData.map((read, idx) => <Read
+                                        key={idx}
+                                        read={read}
+                            ></Read>)
+                        }
+                   </div>
+
             </TabPanel>
 
             {/* //! wishlist: */}
