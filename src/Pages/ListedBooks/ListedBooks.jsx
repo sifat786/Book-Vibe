@@ -26,7 +26,7 @@ const ListedBooks = () => {
     },[])
 
     const handleFilter = filter => {
-        if(filter === 'All') {
+        if(filter === 'All' && filter.sort()) {
             setSort(localData);
             setSort2(localData2);
         } else if(filter === 'Fiction') {
