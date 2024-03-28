@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
 
-   <div className="my-[50px]">
+   <div className="my-5 md:my-[50px]">
         <div className="navbar p-0">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -48,7 +48,7 @@ const Navbar = () => {
                                 ? "text-lg font-bold py-3 px-5 rounded-lg border-2 border-green-500 text-green-500"
                                 : "font-semibold text-lg text-black"
                             }
-                        >Books
+                        >Listed Books
                         </NavLink>
                     </li>
                     <li>
@@ -62,7 +62,38 @@ const Navbar = () => {
                         >Pages to Read
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink
+                        to="/faq"
+                        className={({ isActive }) =>
+                            isActive
+                            ? "text-lg font-bold py-3 px-5 rounded-lg border-2 border-green-500 text-green-500"
+                            : "font-semibold text-lg text-black"
+                        }
+                        >FAQ
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        to="/contact"
+                        className={({ isActive }) =>
+                            isActive
+                            ? "text-lg font-bold py-3 px-5 rounded-lg border-2 border-green-500 text-green-500"
+                            : "font-semibold text-lg text-black"
+                        }
+                        >Contact
+                        </NavLink>
+                    </li>
+                <div className="navbar-end grid  gap-y-1  md:hidden mt-2">
+                    <button className="px-3 py-2 text-sm  text-white font-medium bg-[#23BE0A] rounded-lg">
+                    Sign In
+                    </button>
+                    <button className=" px-3 py-2 text-sm  text-white font-medium bg-[#59C6D2] rounded-lg">
+                    Sign Up
+                    </button>
+                </div>
                 </ul>
+
                 </div>
                 <Link
                 to="/"

@@ -3,7 +3,7 @@ import boy from "../../assets/images/boy.png";
 const Contact = () => {
   return (
     <div>
-      <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-gray-100 text-gray-800 items-center">
+      <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-6 md:py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-gray-100 text-gray-800 items-center">
         <div className="flex flex-col justify-between items">
           <div className="space-y-2">
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">

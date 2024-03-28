@@ -2,9 +2,9 @@ const FAQ = () => {
   return (
     <div>
 
-        <div className='bg-neutral-900 bg-opacity-5 rounded-2xl py-9 mb-8'>
+        <div className='bg-neutral-900 bg-opacity-5 rounded-2xl py-6 md:py-9 mb-8'>
             <h5 className='text-center text-neutral-900 text-[28px] font-bold'>FAQ</h5>
-            <div className="mt-10">
+            <div className="mt-5 md:mt-10">
                     <div className="collapse collapse-plus bg-green-100 mb-4">
                         <input type="radio" name="my-accordion-3" defaultChecked />
                         <div className="collapse-title text-xl font-medium bg-sky-100">
@@ -16,7 +16,7 @@ const FAQ = () => {
                     </div>
 
                     <div className="collapse collapse-plus bg-green-100 mb-4">
-                        <input type="radio" name="my-accordion-3" defaultChecked />
+                        <input type="radio" name="my-accordion-3" />
                         <div className="collapse-title text-xl font-medium bg-sky-100">
                         2. What are some classic books everyone should read?
                         </div>
@@ -26,7 +26,7 @@ const FAQ = () => {
                     </div>
 
                     <div className="collapse collapse-plus bg-green-100 mb-4">
-                        <input type="radio" name="my-accordion-3" defaultChecked />
+                        <input type="radio" name="my-accordion-3"  />
                         <div className="collapse-title text-xl font-medium bg-sky-100">
                         3. How can I improve my reading habits?
                         </div>
@@ -36,7 +36,7 @@ const FAQ = () => {
                     </div>
 
                     <div className="collapse collapse-plus bg-green-100 mb-4">
-                        <input type="radio" name="my-accordion-3" defaultChecked />
+                        <input type="radio" name="my-accordion-3"  />
                         <div className="collapse-title text-xl font-medium bg-sky-100">
                         4. Where can I buy books?
                         </div>
@@ -46,7 +46,7 @@ const FAQ = () => {
                     </div>
 
                     <div className="collapse collapse-plus bg-green-100 mb-4">
-                        <input type="radio" name="my-accordion-3" defaultChecked />
+                        <input type="radio" name="my-accordion-3" />
                         <div className="collapse-title text-xl font-medium bg-sky-100">
                         5. How do I start a book club?
                         </div>

@@ -10,8 +10,8 @@ const CategoryList = () => {
     const [dataLength, setDataLength] = useState(3);
 
     return (
-        <div className="mb-[130px]">
-            <h2 className="text-neutral-900 text-center text-[40px] font-bold font-play pb-9">Books</h2>
+        <div className=" mb-10 md:mb-[130px]">
+            <h2 className="text-neutral-900 text-center text-[40px] font-bold font-play pb-4 md:pb-9">Books</h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {

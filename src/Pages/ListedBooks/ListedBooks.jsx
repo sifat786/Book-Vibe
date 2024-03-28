@@ -58,7 +58,7 @@ const ListedBooks = () => {
         </div>
 
         {/* //! dropdown: */}
-        <div className='text-right'>
+        <div className='text-center my-6 md:my-0 md:text-right'>
             <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn m-1    bg-green-600 hover:bg-black duration-300 rounded-lg text-center text-white text-lg font-semibold">
                     <p>Sort By</p>

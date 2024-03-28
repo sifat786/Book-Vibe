@@ -11,16 +11,16 @@ const Read = ({read}) => {
     return (
         <div>
             <div className="p-6 rounded-2xl border border-neutral-900 border-opacity-20 mb-6">
-                <div className='flex gap-6'>
+                <div className='md:flex gap-6'>
                     <div className='py-7 px-[50px] bg-neutral-900 bg-opacity-5 rounded-2xl'>
                         <img className='w-[230px] h-[230px]' src={image} />
                     </div>
 
-                    <div className="w-full flex flex-col justify-center">
+                    <div className="w-full flex flex-col justify-center text-center md:text-left mt-5 md:mt-0">
                         <h4 className='text-neutral-900 text-2xl font-bold font-play'>{bookName}</h4>
                         <p className="text-neutral-900 text-opacity-80 text-base font-medium py-4">By : {author}</p>
 
-                        <div className="flex gap-4 items-center">
+                        <div className="flex flex-col md:flex md:flex-row gap-y-4 md:gap-y-0 md:gap-4 items-center justify-center md:justify-start">
                             <p className='text-neutral-900 text-base font-bold'>Tags: </p>
 
                             {
