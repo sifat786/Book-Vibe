@@ -1,19 +1,19 @@
-// import { useEffect, useState } from "react";
-// import { getFromLocalStorage } from "../utils/localStorage";
+import { useEffect, useState } from "react";
+import { getFromLocalStorage } from "../utils/localStorage";
 
 
 
-// const useLocalStorage = () => {
+const useLocalStorage = () => {
 
-//     const [localData, setLocalData] = useState([]);
-//     const [sort, setSort] = useState([]);
+    const [localData, setLocalData] = useState([]);
+    const [sort, setSort] = useState([]);
 
-//     useEffect(() => {
-//         setLocalData(getFromLocalStorage());
-//         setSort(getFromLocalStorage());
-//     },[])
+    useEffect(() => {
+        setLocalData(getFromLocalStorage());
+        setSort(getFromLocalStorage());
+    },[])
 
-//     return {localData, sort}
-// };
+    return {localData, sort}
+};
 
-// export default useLocalStorage;
+export default useLocalStorage;

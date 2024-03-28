@@ -106,6 +106,28 @@ const Navbar = () => {
                     >Pages to Read
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink
+                    to="/faq"
+                    className={({ isActive }) =>
+                        isActive
+                        ? "text-lg font-bold py-3 px-5 rounded-lg border-2 border-green-500 text-green-500"
+                        : "font-semibold text-lg text-black"
+                    }
+                    >FAQ
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                        isActive
+                        ? "text-lg font-bold py-3 px-5 rounded-lg border-2 border-green-500 text-green-500"
+                        : "font-semibold text-lg text-black"
+                    }
+                    >Contact
+                    </NavLink>
+                </li>
                 </ul>
             </div>
 

@@ -48,22 +48,6 @@ const ListedBooks = () => {
             filteredData2.sort((a, b) => a.totalPages - b.totalPages);
             setSort2(filteredData2);
         }
-        // else if(filter === 'Mystery') {
-        //     const filteredData = localData.filter(data => data?.category === 'Mystery');
-        //     const filteredData2 = localData2.filter(data => data?.category === 'Mystery');
-        //     setSort(filteredData);
-        //     setSort2(filteredData2);
-        // }else if(filter === 'Adult') {
-        //     const filteredData = localData.filter(data => data?.category === 'Adult');
-        //     const filteredData2 = localData2.filter(data => data?.category === 'Adult');
-        //     setSort(filteredData);
-        //     setSort2(filteredData2);
-        // }else if(filter === 'Thriller') {
-        //     const filteredData = localData.filter(data => data?.category === 'Thriller');
-        //     const filteredData2 = localData2.filter(data => data?.category === 'Thriller');
-        //     setSort(filteredData);
-        //     setSort2(filteredData2);
-        // }
     }
 
   return (
@@ -84,9 +68,6 @@ const ListedBooks = () => {
                     <li onClick={() => handleFilter('Rating',)} className='text-lg font-medium'><a>Rating</a></li>
                     <li onClick={() => handleFilter('Pages')} className='text-lg font-medium'><a>Number of Pages</a></li>
                     <li onClick={() => handleFilter('Year')} className='text-lg font-medium'><a>Publisher Year</a></li>
-                    {/* <li onClick={() => handleFilter('Mystery')} className='text-lg font-medium'><a>Mystery</a></li>
-                    <li onClick={() => handleFilter('Adult')} className='text-lg font-medium'><a>Adult</a></li>
-                    <li onClick={() => handleFilter('Thriller')} className='text-lg font-medium'><a>Thriller</a></li> */}
                 </ul>
             </div>
         </div>
