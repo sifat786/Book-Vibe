@@ -26,35 +26,44 @@ const ListedBooks = () => {
     },[])
 
     const handleFilter = filter => {
-        if(filter === 'All' && filter.sort()) {
-            setSort(localData);
-            setSort2(localData2);
-        } else if(filter === 'Fiction') {
-            const filteredData = localData.filter(data => data?.category === 'Fiction');
-            const filteredData2 = localData2.filter(data => data?.category === 'Fiction');
+        if(filter === 'Rating') {
+            setSort(localData.sort((a, b) => a.rating - b.rating));
+            setSort2(localData2.sort((a, b) => a.rating - b.rating));
+
+        } else if(filter === 'Pages') {
+            const filteredData = localData.filter(data => data?.totalPages);
+            filteredData.sort((a, b) => a.totalPages - b.totalPages);
             setSort(filteredData);
+
+            const filteredData2 = localData2.filter(data => data?.category);
+            filteredData2.sort((a, b) => a.totalPages - b.totalPages);
             setSort2(filteredData2);
-        } else if(filter === 'Fantasy') {
-            const filteredData = localData.filter(data => data?.category === 'Fantasy');
-            const filteredData2 = localData2.filter(data => data?.category === 'Fantasy');
+            
+        } else if(filter === 'Year') {
+            const filteredData = localData.filter(data => data?.yearOfPublishing);
+            filteredData.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
             setSort(filteredData);
-            setSort2(filteredData2);
-        }else if(filter === 'Mystery') {
-            const filteredData = localData.filter(data => data?.category === 'Mystery');
-            const filteredData2 = localData2.filter(data => data?.category === 'Mystery');
-            setSort(filteredData);
-            setSort2(filteredData2);
-        }else if(filter === 'Adult') {
-            const filteredData = localData.filter(data => data?.category === 'Adult');
-            const filteredData2 = localData2.filter(data => data?.category === 'Adult');
-            setSort(filteredData);
-            setSort2(filteredData2);
-        }else if(filter === 'Thriller') {
-            const filteredData = localData.filter(data => data?.category === 'Thriller');
-            const filteredData2 = localData2.filter(data => data?.category === 'Thriller');
-            setSort(filteredData);
+
+            const filteredData2 = localData2.filter(data => data?.yearOfPublishing);
+            filteredData2.sort((a, b) => a.totalPages - b.totalPages);
             setSort2(filteredData2);
         }
+        // else if(filter === 'Mystery') {
+        //     const filteredData = localData.filter(data => data?.category === 'Mystery');
+        //     const filteredData2 = localData2.filter(data => data?.category === 'Mystery');
+        //     setSort(filteredData);
+        //     setSort2(filteredData2);
+        // }else if(filter === 'Adult') {
+        //     const filteredData = localData.filter(data => data?.category === 'Adult');
+        //     const filteredData2 = localData2.filter(data => data?.category === 'Adult');
+        //     setSort(filteredData);
+        //     setSort2(filteredData2);
+        // }else if(filter === 'Thriller') {
+        //     const filteredData = localData.filter(data => data?.category === 'Thriller');
+        //     const filteredData2 = localData2.filter(data => data?.category === 'Thriller');
+        //     setSort(filteredData);
+        //     setSort2(filteredData2);
+        // }
     }
 
   return (
@@ -71,13 +80,13 @@ const ListedBooks = () => {
                     <p>Sort By</p>
                     <FaChevronDown/>
                 </div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-green-100 rounded-box w-[135px]">
-                    <li onClick={() => handleFilter('All')} className='text-lg font-medium'><a>All</a></li>
-                    <li onClick={() => handleFilter('Fiction')} className='text-lg font-medium'><a>Fiction</a></li>
-                    <li onClick={() => handleFilter('Fantasy')} className='text-lg font-medium'><a>Fantasy</a></li>
-                    <li onClick={() => handleFilter('Mystery')} className='text-lg font-medium'><a>Mystery</a></li>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-green-100 rounded-box w-[200px]">
+                    <li onClick={() => handleFilter('Rating',)} className='text-lg font-medium'><a>Rating</a></li>
+                    <li onClick={() => handleFilter('Pages')} className='text-lg font-medium'><a>Number of Pages</a></li>
+                    <li onClick={() => handleFilter('Year')} className='text-lg font-medium'><a>Publisher Year</a></li>
+                    {/* <li onClick={() => handleFilter('Mystery')} className='text-lg font-medium'><a>Mystery</a></li>
                     <li onClick={() => handleFilter('Adult')} className='text-lg font-medium'><a>Adult</a></li>
-                    <li onClick={() => handleFilter('Thriller')} className='text-lg font-medium'><a>Thriller</a></li>
+                    <li onClick={() => handleFilter('Thriller')} className='text-lg font-medium'><a>Thriller</a></li> */}
                 </ul>
             </div>
         </div>
