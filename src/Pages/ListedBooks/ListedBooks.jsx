@@ -27,25 +27,25 @@ const ListedBooks = () => {
 
     const handleFilter = filter => {
         if(filter === 'Rating') {
-            setSort(localData.sort((a, b) => a.rating - b.rating));
-            setSort2(localData2.sort((a, b) => a.rating - b.rating));
+            setSort(localData.sort((a, b) => b.rating - a.rating));
+            setSort2(localData2.sort((a, b) => b.rating - a.rating));
 
         } else if(filter === 'Pages') {
             const filteredData = localData.filter(data => data?.totalPages);
-            filteredData.sort((a, b) => a.totalPages - b.totalPages);
+            filteredData.sort((a, b) => b.totalPages - a.totalPages);
             setSort(filteredData);
 
             const filteredData2 = localData2.filter(data => data?.category);
-            filteredData2.sort((a, b) => a.totalPages - b.totalPages);
+            filteredData2.sort((a, b) => b.totalPages - a.totalPages);
             setSort2(filteredData2);
             
         } else if(filter === 'Year') {
             const filteredData = localData.filter(data => data?.yearOfPublishing);
-            filteredData.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            filteredData.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
             setSort(filteredData);
 
             const filteredData2 = localData2.filter(data => data?.yearOfPublishing);
-            filteredData2.sort((a, b) => a.totalPages - b.totalPages);
+            filteredData2.sort((a, b) => b.totalPages - a.totalPages);
             setSort2(filteredData2);
         }
     }
@@ -99,10 +99,10 @@ const ListedBooks = () => {
                 
                     <div className='my-12'>
                         {
-                                sort2?.map((wish, idx) => <Wishlist
-                                        key={idx}
-                                        wish={wish}
-                                ></Wishlist>)
+                            sort2?.map((wish, idx) => <Wishlist
+                                    key={idx}
+                                    wish={wish}
+                            ></Wishlist>)
                         }
                     </div>
 
