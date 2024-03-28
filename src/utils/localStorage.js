@@ -20,7 +20,7 @@ const getFromLocalStorage = () => {
 
 
 const saveToLocalStorage2 = data => {
-    const savedData = JSON.parse(localStorage.getItem('wish')) || [];
+    const savedData = JSON.parse(localStorage.getItem('read')) || [];
     const existedData = savedData.find(item => item.bookId == data.bookId);
 
     if(!existedData) {
@@ -28,7 +28,7 @@ const saveToLocalStorage2 = data => {
         localStorage.setItem('wish', JSON.stringify(savedData));
         toast.success('Wishlist added to (wishlist-books) successfully.');
     } else {
-        toast.error('You have already stored this book on wishlist!!!');
+        toast.error('You have already stored this book');
     }
 }
 const getFromLocalStorage2 = () => {
