@@ -1,8 +1,8 @@
 # Book-Vibe
 
-### Live-site: [https://book-vibe-69.netlify.app/](https://book-vibe-69.netlify.app/)
+### Live-site: [https://book-vibe7.netlify.app](https://book-vibe7.netlify.app)
 
-### Why choose my website?\
+### Why choose my website?
     1.I have explored each and every books with details.
     2.Implement a dropdown menu featuring options to select from "Rating," "Year," and "Pages."
     3.Customizable reading list.
